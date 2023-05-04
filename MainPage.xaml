@@ -15,7 +15,7 @@
                    HorizontalAlignment="Center"
                    FontFamily="Arial"/>
        
-        <TextBlock Text="peniss"
+        <TextBlock Text="random text"
                    HorizontalAlignment="Center"
                    
                    />
