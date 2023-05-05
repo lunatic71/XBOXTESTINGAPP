@@ -14,11 +14,16 @@
                    FontSize="100"
                    HorizontalAlignment="Center"
                    FontFamily="Arial"/>
-       
-        <TextBlock Text="random text"
+
+        <TextBlock Text="Random Text"
                    HorizontalAlignment="Center"
+                   Margin="0,200,0,0"/>
                    
-                   />
+        <TextBlock Text="More random text"
+                   HorizontalAlignment="Center"
+                   Margin="0,400,0,0"/>
+
+        <Image Source="https://m.media-amazon.com/images/M/MV5BZDk4OWIxYzYtNzdmNC00MjA0LTkzNjAtNGNlNDE5ZWI3YWYzXkEyXkFqcGdeQXVyMzYwOTgxNTY@._V1_FMjpg_UX1000_.jpg" Width="200cm" Height="150cm" Margin="0,140,0,0" HorizontalAlignment="Center"/>
 
 
 
