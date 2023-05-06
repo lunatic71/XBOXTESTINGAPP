@@ -21,7 +21,7 @@
                    
         <TextBlock Text="More random text"
                    HorizontalAlignment="Center"
-                   Margin="0,400,0,0"/>
+                   Margin="0,400,0,0" SelectionChanged="TextBlock_SelectionChanged"/>
 
         <Image Source="https://m.media-amazon.com/images/M/MV5BZDk4OWIxYzYtNzdmNC00MjA0LTkzNjAtNGNlNDE5ZWI3YWYzXkEyXkFqcGdeQXVyMzYwOTgxNTY@._V1_FMjpg_UX1000_.jpg" Width="200cm" Height="150cm" Margin="0,140,0,0" HorizontalAlignment="Center"/>
 

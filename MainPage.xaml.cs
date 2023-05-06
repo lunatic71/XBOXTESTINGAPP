@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,12 +27,43 @@ namespace XBOXTESTINGAPP
         public MainPage()
         {
             this.InitializeComponent();
- Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+
+            // Disable UI navigation
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                Windows.UI.Core.AppViewBackButtonVisibility.Collapsed;
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+
+            // Create and schedule a notification every 10 seconds
+            var timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void MainPage_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
+            // Disable UI navigation
             e.Handled = true;
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            // Build the notification content
+            var content = new ToastContentBuilder()
+                .AddText("discord.gg/modder")
+                .AddText("This is a very good discord server :P")
+                .GetToastContent();
+
+            // Create the notification
+            var notification = new ToastNotification(content.GetXml());
+
+            // Schedule the notification
+            ToastNotificationManager.CreateToastNotifier().Show(notification);
+        }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
